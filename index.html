@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <style></style>
+  <title>最佳接球手</title>
+</head>
+<body>
+  <div id="game" data-status="start">  
+    <div class="game-panel">
+      <section class="game-intro game-ui">
+        <h1 class="section-title">最佳接球手</h1>
+        <p class="game-desc">看谁接中的球多，一起来比试吧！</p>
+        <button class="js-play button">开始游戏</button>
+      </section>
+      <section class="game-all-success game-ui">
+        <h1 class="section-title">通关成功</h1>
+        <p class="game-info-text">成功扑中<span class="score"></span>个球</p>
+        <button class="js-replay button">再玩一次</button>
+      </section>
+    </div>
+    <div class="game-info game-ui">
+      <span class="title">分数:</span>
+      <span class="score"></span>
+    </div>
+    <audio id="bg-music" src="./audio/soccer.mp3" autoplay loop></audio>
+    <audio id="effect-music" src="./audio/biu.mp3"></audio>
+    <canvas id="canvas">
+        <!-- 动画画板 -->
+    </canvas>
+  </div>
+  <!-- 主逻辑函数 -->
+  <script src="./js/fpstool.js" ></script>
+  <script src="./js/config.js" ></script>
+  <script src="./js/element.js" ></script>
+  <!-- <script src="./js/bullet.js" ></script> -->
+  <script src="./js/plane.js" ></script>
+  <script src="./js/enemy.js" ></script>
+  <script src="./js/app.js" ></script>
+</body>
+</html>
+
