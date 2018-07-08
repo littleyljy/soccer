@@ -50,14 +50,20 @@ function famousMan(score) {
   if (0 <= score && score < total / 3) {
     goalkeeper = '中国队派来的卧底';
     gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-1.png)';
-  } else if (total / 3 <= score && score < total * 2 / 3) {
+  } else if (total / 3 <= score && score < total / 2) {
     goalkeeper = '冰岛门将哈尔多松';
     gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-2.png)';
-  } else if (total * 2 / 3 <= score && score < total) {
+  } else if (total / 2 <= score && score < total * 2 / 3) {
+    goalkeeper = '俄罗斯门将阿金费耶夫';
+    gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-6.png)';
+  } else if (total * 2 / 3 <= score && score < total * 4 / 5) {
+    goalkeeper = '墨西哥门将奥乔亚';
+    gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-5.png)';
+  }else if (total * 4 / 5 <= score && score < total) {
     goalkeeper = '英格兰门将皮克福德';
     gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-3.png)';
   } else {
-    goalkeeper = '全部扑中，获得金手套奖！';
+    goalkeeper = '全部扑中，获得金手套！';
     gameAllSuccess.style.backgroundImage = 'url(./img/bg-end-4.png)';
   }
   console.log('goalkeeper', goalkeeper);
@@ -220,6 +226,7 @@ var GAME = {
     this.setStatus(status);
     totalScoreText.innerText = this.score;
     resultText.innerText = famousMan(self.score);
+    effect.pause();
     return;
   },
   //更新所有元素状态
@@ -316,7 +323,7 @@ var GAME = {
         x: parseInt(Math.random() * (canvasWidth - size - 0 + 1) + 0, 10),
         y: -parseInt(Math.random() * (canvasHeight - size - 0 + 1) + 0, 10),
         size: size,
-        speed: Math.ceil(Math.random() * 10 + 3, 10),
+        speed: Math.round(Math.random() * 10 + 3, 10),
         status: enemyType,
         enemyDirection: randomDirection(),
         enemyIcon: opts.enemyIcon,
